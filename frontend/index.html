@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TaskFlow – Ticket & Workflow Manager</title>
+    <link rel = "stylesheet" href = "styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>TaskFlow</h1>
+        <p>Simple Ticket &amp; Workflow Manager</p>
+    </header>
+
+    <main>
+        <!-- New ticket form -->
+        <section id = "new-ticket">
+            <h2>Create Ticket</h2>
+
+            <form id = "ticket-form">
+                <div class = "fields">
+                    <label for="title">Title<span class = "required">*</span></label>
+                    <input type="text" id="title" required />
+                </div>
+
+                <div class="field">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+
+                <div class="field two-columns">
+                    <div>
+                        <label for="priority">Priority</label>
+                        <select id="priority">
+                            <option>Low</option>
+                            <option selected>Medium</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="assignee">Assignee</label>
+                        <input type="text" id="assignee" />
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">Create Ticket</button>
+                <span id="form-message" class="message"></span>
+            </form>
+        </section>
+
+        <!--ticket list-->
+    </main>
+
+</body>
+
+</html>
