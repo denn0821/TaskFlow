@@ -51,8 +51,60 @@
         </section>
 
         <!--ticket list-->
+        <section id="ticket-list">
+            <div class="section-header">
+                <h2>Tickets</h2>
+
+                <div id="filters">
+                    <select id="status-filter">
+                        <option value="">All Statuses</option>
+                        <option>Open</option>
+                        <option>In Progress</option>
+                        <option>Blocked</option>
+                        <option>Done</option>
+                    </select>
+
+                    <select id="priority-filter">
+                        <option value="">All priorities</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+
+                    <button id="refresh-btn" type="button">Refresh</button>
+                </div>
+            </div>
+
+            <div id="summary">
+                <span id="count-total">Total: 0</span>
+                <span id="count-open">Open: 0</span>
+                <span id="count-inprogress">In Progress: 0</span>
+                <span id="count-done">Done: 0</span>
+            </div>
+
+            <table>
+                <thread>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Assignee</th>
+                        <th>Created</th>
+                        <th>Updated</th>
+                        <th>Actions</th>
+                    </tr>
+                </thread>
+
+                <tbody id="tickets-body">
+                    <!-- rows injected by JS -->
+                </tbody>
+            </table>
+
+            <div id="table-message" class="message"></div>
+        </section>
     </main>
 
+    <script src="app.js"></script>
 </body>
-
 </html>

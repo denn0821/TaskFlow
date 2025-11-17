@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f7;
+  color: #222;
+}
+
+header {
+  padding: 1.2rem 2rem;
+  background: #111827;
+  color: #f9fafb;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+header p {
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+main {
+  max-width: 1100px;
+  margin: 1.5rem auto 2rem;
+  padding: 0 1.5rem;
+}
+
+section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+/* Form */
+
+.field {
+  margin-bottom: 0.8rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font: inherit;
+  background: #f9fafb;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+.two-columns {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.two-columns > div {
+  flex: 1;
+}
+
+.primary-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #f9fafb;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.4rem;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+button {
+  font: inherit;
+}
+
+.required {
+  color: #dc2626;
+}
+
+/* Filters & summary */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#filters {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#filters select,
+#filters button {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+}
+
+#filters button {
+  cursor: pointer;
+}
+
+#filters button:hover {
+  background: #e5e7eb;
+}
+
+#summary {
+  margin: 0.6rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+#summary span {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+tr:nth-child(even) td {
+  background: #f9fafb;
+}
+
+.status-select {
+  padding: 0.2rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+/* Action buttons */
+
+.save-btn {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #10b981;
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #d1fae5;
+}
+
+.message {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.message.error {
+  color: #dc2626;
+}
+
+.message.success {
+  color: #16a34a;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 0.5rem;
+  }
+
+  section {
+    padding: 0.9rem 0.9rem 1.1rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    th:nth-child(6),
+    th:nth-child(7),
+    td:nth-child(6),
+    td:nth-child(7) {
+        display: none; /* hide created/updated on small screens */
+    }
+}
+
+
+
