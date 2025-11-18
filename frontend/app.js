@@ -19,14 +19,19 @@ let cachedTickets = [];
 
 //apiGetTickets(payload)sends the ticket form data to the Flask backend and waits for the backend
 // to create the ticket, then returns the response.
-async function apiGetTickets(payload){
-    const res = await fetch(`${API_BASE}/tickets`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-    });
+async function apiGetTickets() {
+  const res = await fetch(`${API_BASE}/tickets`);
 
-    return await res.json();
+  if (!res.ok) {
+    // optional: try to parse any error JSON
+    let err = {};
+    try {
+      err = await res.json();
+    } catch {}
+    throw new Error(err.error || "Failed to load tickets.");
+  }
+
+  return await res.json();
 }
 
 //apiCreateTickets(payload) sends POST request to /api/tickets, sends JSON body with the new ticket data
@@ -40,7 +45,7 @@ async function apiCreateTickets(payload){
     });
 
     if (!res.ok) {
-        const err = await res.json.catch(() => ({}));
+        const err = await res.json().catch(() => ({}));
         throw new Error(err.error || "Failed to create ticket");
     }
     return await res.json();
@@ -80,8 +85,8 @@ function renderTickets(){
     const priorityVal = priorityFilter.value;
     const filtered = cachedTickets.filter(t => {
         const statusOK = !statusVal || t.status === statusVal;
-        const priorityOk = !priorityVal || t.priority === priorityVal;
-        return statusOk && priorityOk;
+        const priorityOK = !priorityVal || t.priority === priorityVal;
+        return statusOK && priorityOK;
     });
 
     ticketsBody.innerHTML = "";
@@ -157,7 +162,7 @@ async function loadAndRender() {
 //Event Handler
 
 //create tickets
-ticketForm.addEventListener("submite", async e => {
+ticketForm.addEventListener("submit", async e => {
     e.preventDefault();
     formMessage.textContent = "";
     formMessage.className = "message";

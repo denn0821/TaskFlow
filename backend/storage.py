@@ -21,7 +21,7 @@ def _save_raw(tickets):
 
 #now_iso() returns current time in a nice format
 def now_iso():
-    return datetime.now(timezone.utc).isoformate(timespec = "seconds")
+    return datetime.now(timezone.utc).isoformat(timespec = "seconds")
 
 def get_all_tickets():
     tickets = _load_raw()

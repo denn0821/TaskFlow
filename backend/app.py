@@ -3,6 +3,7 @@ from flask_cors import CORS
 from storage import get_all_tickets, create_ticket, update_ticket
 
 app = Flask(__name__)
+CORS(app)  # allow requests from your frontend (http://127.0.0.1:5500 etc.)
 
 @app.route("/api/tickets", methods = ["GET"])
 def list_tickets():
