@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from storage import get_all_tickets, create_ticket, update_ticket
 
 app = Flask(__name__)
@@ -42,4 +43,8 @@ def update_ticket_route(ticket_id):
         return jsonify({"error": "Ticket not found"}), 404
 
     return jsonify({"message": "Ticket updated"})
+
+if __name__ == "__main__":
+    # start the development server
+    app.run(debug=True)
 
